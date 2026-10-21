@@ -1,0 +1,157 @@
+# ------------- User View ------------------
+
+# API call for user register
+###
+POST http://127.0.0.1:8000/user
+Content-Type: application/json
+
+{
+    "username": "Ridhunanda",
+    "email": "ridhu@gmail.com",
+    "password": "password@123"
+}
+
+###
+POST http://127.0.0.1:8000/user
+Content-Type: application/json
+
+{
+    "username": "abc",
+    "email": "abc@gmail.com",
+    "password": "password@123"
+}
+
+###
+POST http://127.0.0.1:8000/user
+Content-Type: application/json
+
+{
+    "username": "xyz",
+    "email": "xyz@gmail.com",
+    "password": "password@123"
+}
+
+
+# ------------ Expense View -----------------
+
+# API call to create expense
+###
+POST http://127.0.0.1:8000/expense
+Content-Type: application/json
+Authorization: Basic Ridhunanda:password@123
+
+{
+    "title": "Grocery Shopping",
+    "amount": "45.50",
+    "category": "Food",
+    "payment": "UPI"
+}
+
+###
+POST http://127.0.0.1:8000/expense
+Content-Type: application/json
+Authorization: Basic abc:password@123
+
+{
+    "title": "Electricity Bill",
+    "amount": "120",
+    "category": "Bill",
+    "payment": "Card"
+}
+
+###
+POST http://127.0.0.1:8000/expense
+Content-Type: application/json
+Authorization: Basic xyz:password@123
+
+{
+    "title": "Car Petrol",
+    "amount": "60",
+    "category": "Fuel",
+    "payment": "UPI"
+}
+
+###
+POST http://127.0.0.1:8000/expense
+Content-Type: application/json
+Authorization: Basic abc:password@123
+
+{
+    "title": "Internet Bill",
+    "amount": "40",
+    "category": "Bill",
+    "payment": "UPI"
+}
+
+###
+POST http://127.0.0.1:8000/expense
+Content-Type: application/json
+Authorization: Basic abc:password@123
+
+{
+    "title": "Restaurant Dinner",
+    "amount": "85.20",
+    "category": "Food",
+    "payment": "Card"
+}
+
+
+# API call to list all expenses for logged-in user
+###
+GET http://127.0.0.1:8000/expense
+Authorization: Basic abc:password@123
+
+
+# API call to retrieve a specific expense by ID
+###
+GET http://127.0.0.1:8000/expense/detail/2
+Authorization: Basic abc:password@123
+
+
+# API call to update an expense (PUT)
+###
+PUT http://127.0.0.1:8000/expense/detail/2
+Content-Type: application/json
+Authorization: Basic abc:password@123
+
+{
+    "title": "Updated Electricity Bill",
+    "amount": "125.00",
+    "category": "Bill",
+    "payment": "Card"
+}
+
+
+# API call to delete an expense
+###
+DELETE http://127.0.0.1:8000/expense/detail/2
+Authorization: Basic abc:password@123
+
+
+# API call to filter expenses by category
+###
+GET http://127.0.0.1:8000/expense?category=Food
+Authorization: Basic abc:password@123
+
+
+# API call to filter expenses by payment method
+###
+GET http://127.0.0.1:8000/expense?payment=Card&category=Food
+Authorization: Basic abc:password@123
+
+
+# API call to search expenses by title
+###
+GET http://127.0.0.1:8000/expense?search=Grocery
+Authorization: Basic Ridhunanda:password@123
+
+
+# API call to order expenses by amount (Descending)
+###
+GET http://127.0.0.1:8000/expense?ordering=-amount
+Authorization: Basic abc:password@123
+
+# API call to order expenses by created date
+###
+GET http://127.0.0.1:8000/expense?ordering=created_at
+Authorization: Basic abc:password@123
