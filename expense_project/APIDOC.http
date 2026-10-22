@@ -26,8 +26,8 @@ POST http://127.0.0.1:8000/user
 Content-Type: application/json
 
 {
-    "username": "xyz",
-    "email": "xyz@gmail.com",
+    "username": "xyzz",
+    "email": "xyzz@gmail.com",
     "password": "password@123"
 }
 
@@ -41,9 +41,9 @@ Content-Type: application/json
 Authorization: Basic Ridhunanda:password@123
 
 {
-    "title": "Grocery Shopping",
-    "amount": "45.50",
-    "category": "Food",
+    "title": "Electricity Bill",
+    "amount": "160",
+    "category": "Bill",
     "payment": "UPI"
 }
 
@@ -124,17 +124,17 @@ Authorization: Basic abc:password@123
 
 # API call to delete an expense
 ###
-DELETE http://127.0.0.1:8000/expense/detail/2
-Authorization: Basic abc:password@123
+DELETE http://127.0.0.1:8000/expense/detail/6
+Authorization: Basic Ridhunanda:password@123
 
 
 # API call to filter expenses by category
 ###
-GET http://127.0.0.1:8000/expense?category=Food
+GET http://127.0.0.1:8000/expense?category=Bill
 Authorization: Basic abc:password@123
 
 
-# API call to filter expenses by payment method
+# API call to filter expenses by payment method and category
 ###
 GET http://127.0.0.1:8000/expense?payment=Card&category=Food
 Authorization: Basic abc:password@123
@@ -142,7 +142,7 @@ Authorization: Basic abc:password@123
 
 # API call to search expenses by title
 ###
-GET http://127.0.0.1:8000/expense?search=Grocery
+GET http://127.0.0.1:8000/expense?search=Grocery Shopping
 Authorization: Basic Ridhunanda:password@123
 
 
